@@ -1,0 +1,2 @@
+# reborn-taitai
+discord bot

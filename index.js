@@ -11,7 +11,7 @@ app.get("/", (request, response) => {
     console.log(Date.now() + " Ping Received");
     response.sendStatus(200);
 });
-app.listen(process.env.PORT);
+app.listen(4000);
 setInterval(() => {
     http.get(`https://miy123-reborn-taitai.glitch.me/`);
 }, 280000);

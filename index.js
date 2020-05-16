@@ -13,7 +13,7 @@ app.get("/", (request, response) => {
 });
 app.listen(4000);
 setInterval(() => {
-    http.get(`https://miy123-reborn-taitai.glitch.me/`);
+    http.get(`http://miy123-reborn-taitai.glitch.me/`);
 }, 280000);
 
 Object.defineProperty(String.prototype, 'hashCode', {

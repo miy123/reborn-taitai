@@ -1,0 +1,16 @@
+{
+  "name": "reborn-taitai",
+  "version": "1.0.0",
+  "description": "重生胎胎",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "miy",
+  "license": "ISC"
+}

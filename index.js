@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Discord = require('discord.js');
 const Command = require('./model.js');
 const MicModuleRegister = require('./mic.js');
@@ -187,4 +188,4 @@ function registerCommand(commandInstances) {
         commandInstances.forEach(x => commandManager.push(x));
 }
 
-client.login('NzA3NTY1MDM0MzUxNDkzMTMx.Xr1img.pM3lR0dEBoeMDqBlxfxvONd9pYw');
+client.login(process.env.TOKEN);

@@ -5,13 +5,16 @@ const MicModuleRegister = require('./mic.js');
 const client = new Discord.Client();
 
 const http = require('http');
-http.createServer((req, res) => {
-    res.writeHead(200, {
-        'Content-type': 'text/plain'
-    });
-    res.write('Hey');
-    res.end();
-}).listen(4000);
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+    console.log(Date.now() + " Ping Received");
+    response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+    http.get(`https://miy123-reborn-taitai.glitch.me/`);
+}, 280000);
 
 Object.defineProperty(String.prototype, 'hashCode', {
     value: function () {

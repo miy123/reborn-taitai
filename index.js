@@ -62,13 +62,19 @@ client.on('ready', async () => {
 
 const commandManager = [
     new Command('help', (receivedMessage, commandArguments, param) => {
-        receivedMessage.channel.send(
-            `base command list\n
+        const exampleEmbed = new Discord.MessageEmbed()
+        .setColor('#0099ff')
+        .addFields(
+            { name: 'base command list', value: `
             !hello   --say hello to you
             !roll    --get random number
             !劍純行為 --emm you know that
             !花價
-            `);
+            ` }
+        )
+        .setAuthor('created by 蒼冥賦流', 'https://truth.bahamut.com.tw/s01/201809/84d4cecc5e01510dbb62523629e4c769.JPG', '')
+        .setTimestamp();
+        receivedMessage.channel.send(exampleEmbed);
     }, {}),
     new Command('hello', async (receivedMessage, commandArguments, param) => {
         let responseMessage;
@@ -98,7 +104,26 @@ const commandManager = [
     }, {}),
     new Command('members', (receivedMessage, commandArguments, param) => {
         console.log(receivedMessage.guild.members);
-    }, {})
+    }, {}),
+    new Command('胖虎', (receivedMessage, commandArguments, param) => {
+        receivedMessage.channel.send(`
+        ⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣤⣤⣤⣤⣤⣤⣤⣀⣀⠄⠄⠄⠄⠄⠄⠄⠄
+        ⠄⠄⠄⠄⠄⠄⢠⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⡀⠄⠄⠄⠄
+        ⠄⠄⠄⠄⠄⣰⣿⣿⡟⠻⣿⠟⠻⣿⣿⠛⢻⣿⡿⠻⣿⣿⣿⣦⡀⠄⠄
+        ⠄⠄⠄⠄⣰⣿⡿⠋⠤⢤⡉⢰⡀⡈⢁⠄⠄⣙⡁⢀⡘⢿⢿⣿⣿⡄⠄
+        ⠄⠄⠄⢠⣿⣿⠁⠄⠄⠄⢳⡀⢉⡀⣼⠄⠄⢨⠞⠉⠄⣀⡀⢿⣿⣿⠄
+        ⠄⠄⣠⣼⣿⠇⠄⢀⡴⣒⢲⣷⠲⠇⠻⢧⣴⣿⢺⡙⣦⡌⠁⠄⣿⣿⣇
+        ⠄⡞⠁⠄⡼⠄⠄⢹⡧⣉⠊⡟⠂⠄⠄⠄⠈⡇⣏⡷⣸⠁⠄⠄⢹⣿⢡
+        ⠄⡇⠄⡀⠃⠄⠄⠄⠃⠩⠘⠂⢖⣛⠙⡦⠐⠛⠬⠕⠛⠃⠄⠄⠘⠃⢾
+        ⠄⠳⣴⠃⠈⠚⠄⢠⠄⠄⠄⠄⠄⣹⣉⣀⣀⠄⠄⠄⡀⢢⣠⠄⠄⠄⡀
+        ⠄⠄⡟⠄⠄⠄⠄⠘⢦⡤⠤⠖⠋⠉⠄⠄⠉⠉⠙⠲⡌⠃⠁⠄⠄⠄⣿
+        ⠄⠄⡇⠄⠄⠄⢆⡄⢸⣇⣠⠖⠚⠩⠟⠉⠉⠙⠓⢢⡇⠄⠄⠄⠄⠄⣿
+        ⠄⠄⡇⠄⠄⠄⠈⠄⠄⠙⢤⣤⠤⠖⠒⡒⠒⠒⠚⠁⠄⠐⡄⡀⠄⢀⡇
+        ⠄⠄⢹⡀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠈⠉⠁⠄⠄⠄⠄⠄⠄⠉⠠⢆⡞⠄
+        ⠄⠄⠄⠱⣄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⠴⠋⠄⠄
+        ⠄⠄⠄⠄⠈⠓⠒⠒⠒⠒⠒⠒⠛⠉⠉⠉⠉⠉⠉⠉⠉⠉⠄⠄⠄⠄
+        `);
+    },{})
 ];
 
 client.on('message', (receivedMessage) => {

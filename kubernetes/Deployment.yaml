@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reborntaitai-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reborntaitai
+  template:
+    metadata:
+      labels:
+        app: reborntaitai
+    spec:
+      containers:
+      - name: reborntaitai
+        image: reborntaitai:v4
+        imagePullPolicy: Never
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 80

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: reborntaitai
-        image: reborntaitai:v4
+        image: reborntaitai:v6
         imagePullPolicy: Never
         resources:
           limits:

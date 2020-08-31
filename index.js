@@ -105,6 +105,16 @@ const commandManager = [
     new Command('members', (receivedMessage, commandArguments, param) => {
         console.log(receivedMessage.guild.members);
     }, {}),
+    new Command('豬', async (receivedMessage, commandArguments, param) => {
+        const users = [];
+        await client.users.fetch('379132245048426507')
+        .then((y) => {
+            users.push(y.toString());
+        });
+
+        responseMessage = `${users.toString()}是豬`;
+        receivedMessage.channel.send(responseMessage);
+    }, {}),
     new Command('胖虎', (receivedMessage, commandArguments, param) => {
         receivedMessage.channel.send(`
         ⠄⠄⠄⠄⠄⠄⠄⠄⢀⣀⣤⣤⣤⣤⣤⣤⣤⣀⣀⠄⠄⠄⠄⠄⠄⠄⠄
